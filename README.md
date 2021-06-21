@@ -1,5 +1,5 @@
 # Py2Markdown
-> Easy HTTP Server to convert markdown to HTML
+> Github flavored local markdown preview
 
 ### Getting Started
 
