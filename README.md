@@ -13,6 +13,7 @@ Convert file and keep watching for changes.
 
 ```
 ./py2markdown.py README.md
+...
 Server started at http://localhost:9000
 ```
 
