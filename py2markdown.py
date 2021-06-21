@@ -12,6 +12,7 @@ import tempfile
 from http import HTTPStatus
 
 import markdown
+from mdx_gfm import GithubFlavoredMarkdownExtension
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler, LoggingEventHandler
 
@@ -67,7 +68,8 @@ converted_content = None
 def convert_file_to_html_and_save_to_memory(file_name):
     global converted_content
     with open(file_name, 'r') as markdown_file:
-        converted_content = markdown.markdown(markdown_file.read())
+        converted_content = markdown.markdown(
+                markdown_file.read(), extensions=[GithubFlavoredMarkdownExtension()])
     log.debug('converted file %s' % file_name)
 
 class UpdateHTMLContentEventHandler(FileSystemEventHandler):
